@@ -39,6 +39,10 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 
+import com.example.android.emojify.Emojifier;
+
+import static com.example.android.emojify.Emojifier.detectFaces;
+
 public class MainActivity extends AppCompatActivity {
 
     // TODO (1): Create a Java class called Emojifier
@@ -185,6 +189,8 @@ public class MainActivity extends AppCompatActivity {
         mResultsBitmap = BitmapUtils.resamplePic(this, mTempPhotoPath);
 
         // TODO (3): Call the new detectFaces() method, passing in the resampled bitmap to detect the faces in the picture.
+
+        detectFaces(this,mResultsBitmap);
 
         // Set the new bitmap to the ImageView
         mImageView.setImageBitmap(mResultsBitmap);
