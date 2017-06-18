@@ -100,19 +100,20 @@ class BitmapUtils {
      * @param imagePath The path of the photo to be deleted.
      */
     static boolean deleteImageFile(Context context, String imagePath) {
-        // Get the file
-        File imageFile = new File(imagePath);
-
-        // Delete the image
-        boolean deleted = imageFile.delete();
-
-        // If there is an error deleting the file, show a Toast
-        if (!deleted) {
-            String errorMessage = context.getString(R.string.error);
-            Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
-        }
-
-        return deleted;
+//        // Get the file
+//        File imageFile = new File(imagePath);
+//
+//        // Delete the image
+//        boolean deleted = imageFile.delete();
+//
+//        // If there is an error deleting the file, show a Toast
+//        if (!deleted) {
+//            String errorMessage = context.getString(R.string.error);
+//            Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+//        }
+//
+//        return deleted;
+        return true;
     }
 
     /**

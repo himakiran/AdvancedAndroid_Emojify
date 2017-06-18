@@ -30,6 +30,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_STORAGE_PERMISSION = 1;
 
     private static final String FILE_PROVIDER_AUTHORITY = "com.example.android.fileprovider";
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private ImageView mImageView;
 
@@ -130,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 photoFile = BitmapUtils.createTempImageFile(this);
             } catch (IOException ex) {
                 // Error occurred while creating the File
+                Log.v(LOG_TAG,"Camera did nto take picture correctly");
                 ex.printStackTrace();
             }
             // Continue only if the File was successfully created
@@ -137,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Get the path of the temporary file
                 mTempPhotoPath = photoFile.getAbsolutePath();
+                Log.v(LOG_TAG,"Pic stored in "+ mTempPhotoPath);
 
                 // Get the content URI for the image file
                 Uri photoURI = FileProvider.getUriForFile(this,
